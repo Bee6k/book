@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import Image from 'next/image';
 import Link from "next/link";
 import BookCard from "@/components/book-card"; // Assume this component exists for displaying book info
+import NewsletterForm from "@/components/newsletter-form"; // Import the new client component
 
 // Sample data - replace with actual data fetching
 const featuredBooks = [
@@ -96,13 +96,7 @@ export default function Home() {
        <section className="bg-secondary dark:bg-gray-800 p-8 rounded-lg text-center">
           <h2 className="text-2xl font-semibold mb-4 text-secondary-foreground dark:text-gray-200">Stay Updated</h2>
           <p className="text-muted-foreground dark:text-gray-400 mb-6">Subscribe to our newsletter for the latest book releases and offers.</p>
-          <form className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
-            <Input type="email" placeholder="Enter your email" className="flex-grow" required aria-label="Email for newsletter"/>
-             {/* Server Action Placeholder */}
-             <Button type="submit" onClick={(e) => { e.preventDefault(); alert('Subscription submitted (placeholder)'); }}>
-               Subscribe
-             </Button>
-          </form>
+          <NewsletterForm />
        </section>
     </div>
   );

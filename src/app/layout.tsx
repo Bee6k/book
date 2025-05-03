@@ -1,21 +1,16 @@
 import type { Metadata } from 'next';
-import { GeistSans as Geist } from 'next/font/google'; // Correct import name
+import { Inter } from 'next/font/google'; // Use a standard Google Font
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+// Instantiate the Inter font
+const inter = Inter({
+  variable: '--font-inter', // Define a CSS variable for the font
   subsets: ['latin'],
 });
-
-// Assuming Geist Mono is not needed based on design spec using sans-serif
-// const geistMono = Geist_Mono({
-//   variable: '--font-geist-mono',
-//   subsets: ['latin'],
-// });
 
 export const metadata: Metadata = {
   title: 'LitLink - Your Modern Bookstore',
@@ -29,7 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} antialiased flex flex-col min-h-screen`}>
+      {/* Apply the font variable to the body */}
+      <body className={`${inter.variable} antialiased flex flex-col min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

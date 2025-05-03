@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { BookOpen, ChevronUp, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import NewsletterForm from '@/components/newsletter-form'; // Import the new component
 
 const Footer = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -64,13 +64,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-foreground dark:text-white">Newsletter</h3>
             <p className="text-sm mb-4">Get the latest updates and offers directly in your inbox.</p>
-            <form className="flex gap-2">
-              <Input type="email" placeholder="Your email" className="flex-grow bg-background dark:bg-gray-800 border-border dark:border-gray-700" aria-label="Email for newsletter" />
-              {/* Server Action Placeholder */}
-               <Button type="submit" size="sm" onClick={(e) => { e.preventDefault(); alert('Subscription submitted (placeholder)'); }}>
-                 Sign Up
-               </Button>
-            </form>
+             {/* Use the client component here */}
+            <div className="max-w-full"> {/* Ensure form takes appropriate width */}
+                 <NewsletterForm />
+             </div>
              <div className="flex space-x-4 mt-6">
                  <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-primary dark:hover:text-teal-400 transition-colors" aria-label="Twitter"><Twitter className="h-5 w-5" /></a>
                  <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-primary dark:hover:text-teal-400 transition-colors" aria-label="Facebook"><Facebook className="h-5 w-5" /></a>

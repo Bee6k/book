@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  /* Use Geist Sans as the primary font if needed, otherwise fallback */
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  /* Use Inter as the primary font */
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 @layer base {
